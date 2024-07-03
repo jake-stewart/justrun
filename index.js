@@ -25,7 +25,7 @@ function build(scriptPath, outputPath) {
     return true;
 }
 
-function execute(outputPat, args) {
+function execute(outputPath, args) {
     return spawnSync("node", [outputPath, ...args], { stdio: "inherit" }).status;
 }
 
