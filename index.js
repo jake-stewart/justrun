@@ -11,6 +11,7 @@ function build(scriptPath, outputPath) {
         entryPoints: [scriptPath],
         format: "cjs",
         outfile: outputPath,
+        platform: "node",
     });
     if (result.warnings.length) {
         const formatted = formatMessagesSync(result.warnings);
@@ -42,7 +43,9 @@ function main() {
         exitStatus = execute(outputPath, args);
     }
     finally {
-        fs.rmSync(outputPath);
+        if (fs.existsSync(outputPath)) {
+            fs.rmSync(outputPath);
+        }
     }
 
     process.exit(exitStatus == null ? -1 : exitStatus);

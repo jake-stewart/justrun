@@ -1,19 +1,19 @@
 {
-  "name": "justrun",
-  "version": "1.0.0",
+  "name": "run-the-js",
+  "version": "1.1.0",
   "description": "just run the damn javascript",
   "bin": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jake-stewart/justrun.git"
+    "url": "git+https://github.com/jake-stewart/run-the-js.git"
   },
-  "author": "Jake Stewart",
+  "author": "jake-stewart",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jake-stewart/justrun/issues"
+    "url": "https://github.com/jake-stewart/run-the-js/issues"
   },
-  "homepage": "https://github.com/jake-stewart/justrun",
-  "devDependencies": {
+  "homepage": "https://github.com/jake-stewart/run-the-js",
+  "dependencies": {
     "esbuild": "^0.23.0",
     "temp": "^0.9.4"
   }
