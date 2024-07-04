@@ -2,7 +2,6 @@
 
 const { buildSync, formatMessagesSync } = require("esbuild");
 const { spawnSync } = require("child_process");
-const temp = require("temp");
 const fs = require("fs");
 
 function build(scriptPath, outputPath) {
@@ -12,6 +11,7 @@ function build(scriptPath, outputPath) {
         format: "cjs",
         outfile: outputPath,
         platform: "node",
+        external: ["./node_modules/*"]
     });
     if (result.warnings.length) {
         const formatted = formatMessagesSync(result.warnings);
@@ -33,7 +33,7 @@ function execute(outputPath, args) {
 function main() {
     const args = process.argv.slice(2);
     const scriptPath = args.shift();
-    const outputPath = temp.path({ suffix: ".js" });
+    const outputPath = "./.run-the-js.bundle.js";
     let exitStatus = null;
 
     try {
